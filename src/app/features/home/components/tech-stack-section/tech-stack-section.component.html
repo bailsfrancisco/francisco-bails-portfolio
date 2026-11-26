@@ -1,0 +1,44 @@
+<section id="tech-stack" class="tech-stack-section">
+  <div class="section-container">
+
+    <div class="section-heading">
+      <span class="section-eyebrow">02 / TECNOLOGÍAS</span>
+
+      <h2>
+        Herramientas para<br />
+        <span>construir grandes soluciones.</span>
+      </h2>
+
+      <p class="section-description">
+        Tecnologías, herramientas y patrones que utilizo
+        para diseñar y desarrollar soluciones de software.
+      </p>
+    </div>
+
+    <div class="technology-grid">
+      @for (group of technologyGroups; track group.title) {
+      <article class="technology-card">
+
+        <div class="technology-card-header">
+          <h3>{{ group.title }}</h3>
+          <span class="card-indicator"></span>
+        </div>
+
+        <p class="technology-description">
+          {{ group.description }}
+        </p>
+
+        <div class="technology-list">
+          @for (technology of group.technologies; track technology) {
+          <span class="technology-tag">
+            {{ technology }}
+          </span>
+          }
+        </div>
+
+      </article>
+      }
+    </div>
+
+  </div>
+</section>

@@ -1,31 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 :root {
-    --color-background: #0b1020;
-    --color-surface: #111827;
-    --color-card: #172033;
+  --color-background: #0b1020;
+  --color-surface: #111827;
+  --color-card: #172033;
 
-    --color-text: #f8fafc;
-    --color-text-secondary: #94a3b8;
+  --color-text: #f8fafc;
+  --color-text-secondary: #94a3b8;
 
-    --color-primary: #818cf8;
-    --color-accent: #38bdf8;
+  --color-primary: #818cf8;
+  --color-accent: #38bdf8;
 
-    --color-border: #263247;
+  --color-border: #263247;
 
-    --font-primary: 'Inter', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
+  --font-primary: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
-    margin: 0;
-    background: var(--color-background);
-    color: var(--color-text);
-    font-family: var(--font-primary);
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-background);
 }

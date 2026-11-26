@@ -1,0 +1,123 @@
+.about-section {
+  padding: 110px 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-heading {
+  margin-bottom: 56px;
+}
+
+.section-eyebrow {
+  display: block;
+  margin-bottom: 20px;
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  letter-spacing: -2px;
+
+  span {
+    color: var(--color-text-secondary);
+  }
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.about-description {
+  p {
+    color: var(--color-text-secondary);
+    font-size: 0.98rem;
+    line-height: 1.9;
+    margin: 0 0 20px;
+  }
+
+  .lead {
+    color: var(--color-text);
+    font-size: 1.15rem;
+    line-height: 1.8;
+  }
+}
+
+.about-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.highlight-card {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-3px);
+  }
+
+  h3 {
+    margin: 0 0 8px;
+    color: var(--color-text);
+    font-size: 1rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+}
+
+.highlight-number {
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 800px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: 80px 20px;
+  }
+
+  .section-heading {
+    margin-bottom: 36px;
+  }
+
+  .section-heading h2 {
+    letter-spacing: -1px;
+  }
+
+  .highlight-card {
+    padding: 20px;
+  }
+}

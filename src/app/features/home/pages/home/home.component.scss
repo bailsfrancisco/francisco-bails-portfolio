@@ -1,0 +1,141 @@
+.hero {
+  max-width: 1200px;
+  min-height: 650px;
+  margin: 0 auto;
+  padding: 120px 24px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.hero-sub-content {
+  display: flex;
+  align-items: center;
+  padding-bottom: 5%;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 28px;
+  width: 100%;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--color-accent);
+}
+
+h1 {
+  max-width: 850px;
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  line-height: 1.08;
+  letter-spacing: -3px;
+  font-weight: 800;
+}
+
+.highlight {
+  display: block;
+  color: var(--color-primary);
+}
+
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.hero-description {
+  max-width: 650px;
+  margin: 28px 0;
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 22px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.button-primary {
+  background: var(--color-primary);
+  color: #0b1020;
+}
+
+.button-secondary {
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+
+  &:hover {
+    border-color: var(--color-primary);
+  }
+}
+
+.hero-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 64px;
+
+  span {
+    padding: 8px 13px;
+    color: var(--color-text-secondary);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: auto;
+    padding: 90px 20px;
+  }
+
+  h1 {
+    letter-spacing: -1.5px;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-technologies {
+    margin-top: 42px;
+  }
+}
