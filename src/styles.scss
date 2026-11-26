@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --color-background: #0b1020;
+    --color-surface: #111827;
+    --color-card: #172033;
+
+    --color-text: #f8fafc;
+    --color-text-secondary: #94a3b8;
+
+    --color-primary: #818cf8;
+    --color-accent: #38bdf8;
+
+    --color-border: #263247;
+
+    --font-primary: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-primary);
+}
