@@ -14,7 +14,9 @@
 .hero-sub-content {
   display: flex;
   align-items: center;
-  padding-bottom: 5%;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 32px;
 }
 
 .eyebrow {
@@ -25,8 +27,7 @@
   font-family: var(--font-mono);
   font-size: 0.8rem;
   letter-spacing: 1px;
-  margin-bottom: 28px;
-  width: 100%;
+  margin: 0;
 }
 
 .status-dot {
@@ -53,9 +54,13 @@ h1 {
 }
 
 .profile-picture {
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
   border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-border);
+  box-shadow: 0 0 30px rgba(129, 140, 248, 0.12);
 }
 
 .hero-description {
@@ -137,5 +142,20 @@ h1 {
 
   .hero-technologies {
     margin-top: 42px;
+  }
+
+  .hero-sub-content {
+    gap: 16px;
+    padding-bottom: 28px;
+  }
+
+  .profile-picture {
+    width: 105px;
+    height: 105px;
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.5px;
   }
 }

@@ -1,3 +1,70 @@
-<section id="projects">
-  <p>projects section works!</p>
+<section id="projects" class="projects-section">
+  <div class="section-container">
+
+    <div class="section-heading">
+      <span class="section-eyebrow">
+        {{ i18n.translate('projects.myWork') }}
+      </span>
+
+      <h2>
+        {{ i18n.translate('projects.projects') }}
+        <span class="highlight">
+          {{ i18n.translate('projects.titleHighlight') }}
+        </span>
+      </h2>
+
+      <p>
+        {{ i18n.translate('projects.description') }}
+      </p>
+    </div>
+
+    <div class="projects-grid">
+
+      @for (project of projects; track project.key) {
+      <article class="project-card">
+
+        <div class="project-header">
+          <span class="project-category" [class.personal]="project.type === 'personal'">
+            {{ i18n.translate(project.categoryKey) }}
+          </span>
+
+          <span class="project-period">
+            {{ i18n.translate(project.periodKey) }}
+          </span>
+        </div>
+
+        <div class="project-content">
+
+          <h3>{{ i18n.translate(project.titleKey) }}</h3>
+
+          <p class="project-description">
+            {{ i18n.translate(project.descriptionKey) }}
+          </p>
+
+          <div class="project-highlights">
+            <h4>
+              {{ i18n.translate('projects.keyContributions') }}
+            </h4>
+
+            <ul>
+              @for (highlight of project.highlights; track highlight) {
+              <li>{{ i18n.translate(highlight) }}</li>
+              }
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="project-technologies">
+          @for (technology of project.technologies; track technology) {
+          <span>{{ technology }}</span>
+          }
+        </div>
+
+      </article>
+      }
+
+    </div>
+
+  </div>
 </section>

@@ -1,18 +1,42 @@
 <header class="navbar">
   <div class="navbar-container">
-    <a class="brand" href="#home" aria-label="Inicio">
+
+    <a class="brand" [routerLink]="['/', i18n.language()]" fragment="home" aria-label="Francisco Bails - Home">
       Francisco Bails
     </a>
 
-    <nav class="nav-links" aria-label="Navegación principal">
-      <a href="#home">Inicio</a>
-      <a href="#about">Sobre mí</a>
-      <a href="#projects">Proyectos</a>
-      <a href="#contact">Contacto</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a [routerLink]="['/', i18n.language()]" fragment="home">
+        {{ i18n.translate('nav.home') }}
+      </a>
+
+      <a [routerLink]="['/', i18n.language()]" fragment="about">
+        {{ i18n.translate('nav.about') }}
+      </a>
+
+      <a [routerLink]="['/', i18n.language()]" fragment="tech-stack">
+        {{ i18n.translate('nav.techStack') }}
+      </a>
+
+      <a [routerLink]="['/', i18n.language()]" fragment="projects">
+        {{ i18n.translate('nav.projects') }}
+      </a>
+      
+      <a [routerLink]="['/', i18n.language()]" fragment="learning">
+        {{ i18n.translate('nav.learning') }}
+      </a>
+
+      <a [routerLink]="['/', i18n.language()]" fragment="contact">
+        {{ i18n.translate('nav.contact') }}
+      </a>
     </nav>
 
-    <a class="language-link" href="/en" aria-label="View in English">
-      EN
-    </a>
+    <button type="button" class="language-link" (click)="switchLanguage()"
+      [attr.aria-label]="i18n.translate('nav.languageLabel')">
+
+      {{ i18n.translate('nav.language') }}
+
+    </button>
+
   </div>
 </header>

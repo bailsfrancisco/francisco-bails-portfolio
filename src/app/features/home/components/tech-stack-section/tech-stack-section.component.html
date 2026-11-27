@@ -2,30 +2,33 @@
   <div class="section-container">
 
     <div class="section-heading">
-      <span class="section-eyebrow">02 / TECNOLOGÍAS</span>
+      <span class="section-eyebrow">
+        {{ i18n.translate('techStack.eyebrow') }}
+      </span>
 
       <h2>
-        Herramientas para<br />
-        <span>construir grandes soluciones.</span>
+        {{ i18n.translate('techStack.title') }}<br />
+        <span>
+          {{ i18n.translate('techStack.titleHighlight') }}
+        </span>
       </h2>
 
       <p class="section-description">
-        Tecnologías, herramientas y patrones que utilizo
-        para diseñar y desarrollar soluciones de software.
+        {{ i18n.translate('techStack.description') }}
       </p>
     </div>
 
     <div class="technology-grid">
-      @for (group of technologyGroups; track group.title) {
+      @for (group of technologyGroups; track group.key) {
       <article class="technology-card">
 
         <div class="technology-card-header">
-          <h3>{{ group.title }}</h3>
+          <h3>{{ i18n.translate(group.titleKey) }}</h3>
           <span class="card-indicator"></span>
         </div>
 
         <p class="technology-description">
-          {{ group.description }}
+          {{ i18n.translate(group.descriptionKey) }}
         </p>
 
         <div class="technology-list">

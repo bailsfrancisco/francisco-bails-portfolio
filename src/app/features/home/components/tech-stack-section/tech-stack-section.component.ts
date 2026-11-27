@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+
+import { Component, inject } from '@angular/core';
+import { TranslationService } from '../../../../core/i18n/translation.service';
 
 interface TechnologyGroup {
-  title: string;
-  description: string;
+  key: string;
+  titleKey: string;
+  descriptionKey: string;
   technologies: string[];
 }
 
@@ -13,10 +16,13 @@ interface TechnologyGroup {
   styleUrl: './tech-stack-section.component.scss'
 })
 export class TechStackSectionComponent {
+  readonly i18n = inject(TranslationService);
+
   readonly technologyGroups: TechnologyGroup[] = [
     {
-      title: 'Backend development',
-      description: 'Desarrollo de aplicaciones y servicios',
+      key: 'backend',
+      titleKey: 'techStack.groups.backend.title',
+      descriptionKey: 'techStack.groups.backend.description',
       technologies: [
         'C#',
         '.NET',
@@ -27,8 +33,9 @@ export class TechStackSectionComponent {
       ]
     },
     {
-      title: 'Frontend development',
-      description: 'Interfaces web modernas y responsivas',
+      key: 'frontend',
+      titleKey: 'techStack.groups.frontend.title',
+      descriptionKey: 'techStack.groups.frontend.description',
       technologies: [
         'Angular',
         'TypeScript',
@@ -39,8 +46,9 @@ export class TechStackSectionComponent {
       ]
     },
     {
-      title: 'Database',
-      description: 'Persistencia y gestión de datos',
+      key: 'database',
+      titleKey: 'techStack.groups.database.title',
+      descriptionKey: 'techStack.groups.database.description',
       technologies: [
         'SQL Server',
         'T-SQL',
@@ -49,8 +57,9 @@ export class TechStackSectionComponent {
       ]
     },
     {
-      title: 'Architecture & Engineering',
-      description: 'Diseño y organización de soluciones',
+      key: 'architecture',
+      titleKey: 'techStack.groups.architecture.title',
+      descriptionKey: 'techStack.groups.architecture.description',
       technologies: [
         'Clean Architecture',
         'Repository Pattern',
@@ -60,8 +69,9 @@ export class TechStackSectionComponent {
       ]
     },
     {
-      title: 'Cloud & Tools',
-      description: 'Infraestructura y herramientas de desarrollo',
+      key: 'cloud',
+      titleKey: 'techStack.groups.cloud.title',
+      descriptionKey: 'techStack.groups.cloud.description',
       technologies: [
         'Microsoft Azure',
         'Git',
@@ -69,6 +79,18 @@ export class TechStackSectionComponent {
         'IIS',
         'Hangfire',
         'SignalR'
+      ]
+    },
+    {
+      key: 'ai',
+      titleKey: 'techStack.groups.ai.title',
+      descriptionKey: 'techStack.groups.ai.description',
+      technologies: [
+        'ChatGPT',
+        'Claude Code',
+        'GitHub Copilot',
+        'Prompt Engineering',
+        'AI Agents'
       ]
     }
   ];

@@ -1,0 +1,83 @@
+<section id="learning" class="learning-section">
+  <div class="section-container">
+
+    <div class="section-heading">
+      <span class="section-eyebrow">
+        {{ i18n.translate('learning.eyebrow') }}
+      </span>
+
+      <h2>
+        {{ i18n.translate('learning.title') }}
+        <span class="highlight">
+          {{ i18n.translate('learning.titleHighlight') }}
+        </span>
+      </h2>
+
+      <p>
+        {{ i18n.translate('learning.description') }}
+      </p>
+    </div>
+
+    <div class="courses-list">
+
+      @for (course of courses; track course.key) {
+      <article class="course-card" [class.academic]="course.type === 'academic'">
+
+        <div class="course-icon">
+          <span>01</span>
+        </div>
+
+        <div class="course-content">
+
+          <div class="course-header">
+            <span class="course-category">
+              {{ i18n.translate(course.categoryKey) }}
+            </span>
+
+            <span class="course-status" [class.completed]="course.status === 'completed'">
+
+              @if (course.status === 'completed') {
+              {{ i18n.translate('learning.status.completed') }}
+              } @else {
+              {{ i18n.translate('learning.status.inProgress') }}
+              }
+
+            </span>
+          </div>
+
+          <h3>{{ i18n.translate(course.titleKey) }}</h3>
+
+          <div class="course-details">
+            @if (course.institution) {
+            <span>{{ course.institution }}</span>
+            }
+
+            @if (course.platform) {
+            <span>{{ course.platform }}</span>
+            }
+
+            @if (course.targetYear) {
+            <span>
+              {{ i18n.translate('learning.target') }}
+              {{ course.targetYear }}
+            </span>
+            }
+          </div>
+
+          @if (course.topics.length > 0) {
+          <div class="course-topics">
+            @for (topic of course.topics; track topic) {
+            <span>{{ topic }}</span>
+            }
+          </div>
+          }
+
+        </div>
+
+      </article>
+      }
+
+    </div>
+
+  </div>
+</section>

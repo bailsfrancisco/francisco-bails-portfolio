@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslationService } from '../../../../core/i18n/translation.service';
 
 @Component({
   selector: 'app-about-section',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './about-section.component.scss'
 })
 export class AboutSectionComponent {
-
+  readonly i18n = inject(TranslationService);
 }

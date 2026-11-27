@@ -4,31 +4,31 @@
     <div class="hero-sub-content">
       <span class="eyebrow">
         <span class="status-dot"></span>
-        DESARROLLADOR FULL STACK
+        {{ i18n.translate('home.eyebrow') }}
       </span>
 
-      <img [src]="profilePicturePath" alt="profile-picture" class="profile-picture">
+      <img [src]="profilePicturePath" [alt]="i18n.translate('home.profileAlt')" class="profile-picture">
     </div>
 
     <h1>
-      Transformando ideas en
-      <span class="highlight">soluciones digitales.</span>
+      {{ i18n.translate('home.title') }}
+      <span class="highlight">
+        {{ i18n.translate('home.highlight') }}
+      </span>
     </h1>
 
     <p class="hero-description">
-      Soy desarrollador de software especializado en .NET y Angular.
-      Diseño y construyo aplicaciones web escalables, sistemas
-      empresariales y soluciones orientadas a resolver problemas reales.
+      {{ i18n.translate('home.description') }}
     </p>
 
     <div class="hero-actions">
       <a href="#projects" class="button button-primary">
-        Ver proyectos
-        <span>→</span>
+        {{ i18n.translate('home.projectsButton') }}
+        <span aria-hidden="true">→</span>
       </a>
 
       <a href="#contact" class="button button-secondary">
-        Contactarme
+        {{ i18n.translate('home.contactButton') }}
       </a>
     </div>
 
@@ -41,6 +41,7 @@
       <span>SQL Server</span>
       <span>Azure</span>
     </div>
+
   </div>
 </section>
 
@@ -49,5 +50,7 @@
 <app-tech-stack-section />
 
 <app-projects-section />
+
+<app-learning-section />
 
 <app-contact-section />
